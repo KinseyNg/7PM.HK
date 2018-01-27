@@ -1,0 +1,79 @@
+<% content_for :title, "二手舊書買賣" %>
+<div class="textbanner">
+<h5>舊書買賣 - 說明</h5>
+  <ul>
+    <li>1. 同學可以將自己的課本於此平台放售</li>
+    <li>2. 如未能尋得合適課本，可使用"徵求課本"功能</li>
+    <li>3. 本平台只限同學間交易。嚴禁收賣公司與Agent利用本平台"搵客"，一經發現即時刪除</li>
+  </ul>
+
+</div>
+<%=form_tag('/oldbook/s/',:id=>"search", method: "get")%>
+
+
+
+
+<div class="row collapse">
+  <div class="large-12 columns">
+    <div class="row collapse">
+      <div class="small-8 large-10 columns">
+        <%=text_field_tag('fid',nil, :placeholder => "在此輸入你想搜索的書本")%>
+      </div>
+      <div class="small-4  large-2 columns">
+        <a href="" class="button postfix" id="searchlink">搜索</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<% if @type=="f"%>
+現時年級： <%= select_tag "formCat", options_from_collection_for_select(@allcat, "id", "form_name", @info.first.id.to_s )%>
+<%end%>
+<% if @type=="s"%>
+   顯示 "<%=@id%>" 的搜尋結果<br>
+
+<%end%>
+<p><p>
+<a class="ss-button small red with-icon" href="/oldbook/add" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);" class="ss-no-ajax" target="_self">刊登書本</a>
+  <a class="ss-button small red with-icon" href="/oldbook/ask" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);" class="ss-no-ajax" target="_self">徵求書本</a>
+<div>
+  <table>
+    <tr><td></td><td>類型</td><td width="60%">物品名稱</td><td>價錢</td><td>發怖日期</td></tr>
+    <%@book.each do |n|%>
+
+    <tr>
+      <td>
+        <a href="<%="/oldbook/showdetails/"+n.id.to_s%>" class="ss-no-ajax">
+        <%= if n.photo1.exists?
+            image_tag n.photo1.url(:thumb)
+        end
+        %></a></td>
+
+      <td>
+       [ <%= if n.sold=="unsold"
+              "出售"
+elsif n.sold="ask"
+"徵求"
+end  %>]    </td><td><%=link_to(n.title,"/oldbook/showdetails/"+n.id.to_s, :target => "_new",:class=>"ss-no-ajax")%></td><td><%=n.price.present? ? ("HKD$"+n.price.to_s):("請聯絡賣家")%></td><td><%=n.created_at.to_date%></td>
+    </tr>
+       <%end%>
+  </table>
+</div>
+<table>
+  <tr>
+    <td width="70%"></td>
+    <td>  <%= paginate @book %></td>
+  </tr>
+</table>
+
+
+<script>
+    $('#formCat').bind('change', function() { window.location.pathname = "/oldbook/f/"+$(this).val() });
+</script>
+<script>
+    var form = document.getElementById("search");
+
+    document.getElementById("searchlink").addEventListener("click", function () {
+        form.submit();
+    });
+</script>

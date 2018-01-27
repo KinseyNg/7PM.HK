@@ -1,0 +1,16 @@
+<% content_for :title, "短信箱" %>
+<h1>短信箱   <a class="ss-button small green with-icon ss-no-ajax" href="/msg/new" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><span class="button-icon icon-star3" aria-hidden="true"></span>寫新信息</a></h1>
+<table>
+
+  <tr><td witdh="20%">發出者</td><td>內容</td><td>時間</td></tr>
+<%@readmy.each do |n|%>
+  <tr><td>
+<%= User.find_by_id(n.sender).name%>
+  </td><td>
+    <%=link_to(n.main,"/msg/details/"+n.id.to_s,:class=>"ss-no-ajax")%>
+  </td><td>
+    <%=n.created_at%>
+  </td>
+  </tr>
+<%end%>
+</table>

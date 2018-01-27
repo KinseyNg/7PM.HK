@@ -1,0 +1,58 @@
+<% content_for :title, "發怖書本" %>
+<h1>發怖書本</h1>
+<p>請填寫以下資料，(有 * 為必須填寫部份)</p>
+<%=form_tag 'add', :multipart => true do %>
+<table>
+  <tr>
+    <td>書名*</td><td><%=text_field_tag 'title'%></td>
+  </tr>
+  <tr>
+    <td>出版年份</td><td><%=text_field_tag 'public_years'%></td>
+  </tr>
+
+  <tr>
+    <td>年級*</td><td><%=select_tag "stu_f", options_from_collection_for_select(@booklist, "id", "form_name")%></td>
+  </tr>
+  <tr>
+    <td>自評新舊(n%)</td><td><%=text_field_tag 'status'%></td>
+  </tr>
+  <tr>
+    <td>希望價錢(HKD$)</td><td><%=text_field_tag 'price'%></td>
+  </tr>
+  <tr>
+    <td>交收地區</td><td><%=text_field_tag 'location'%></td>
+  </tr>
+  <tr>
+    <td>描述</td><td><%=text_area_tag 'des'%></td>
+  </tr>
+
+  <tr>
+    <td colspan="2">圖片最多三張，每張最大5MB</td>
+  </tr>
+  <tr>
+    <td>封面圖片*：</td><td> <%=  file_field_tag :photo1 %> </td>
+  </tr>
+  <tr>
+    <td>圖片二：</td><td> <%= file_field_tag :photo2 %></td>
+  </tr>
+  <tr>
+    <td>圖片三：</td><td> <%= file_field_tag :photo3 %></td>
+  </tr>
+</table>
+<h4><%=submit_tag(value="刊登")%></h4>
+<%end%>
+
+
+<script>
+
+    $('#des').editable({
+        inlineMode: false,
+        buttons: ['bold', 'italic', 'sep',
+            // 'indent', 'outdent',
+            'insertOrderedList', 'insertUnorderedList', 'sep',
+            'createLink', 'insertImage', 'inlineStyle'],
+        width: '700',
+        height: '200'
+
+    });
+</script>

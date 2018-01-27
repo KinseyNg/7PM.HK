@@ -1,0 +1,18 @@
+<% content_for :title,"短信內容" %>
+<div class="row">
+  <div class="large-1 columns"></div>
+  <div class="large-11 columns">
+    短信內容
+<table>
+  <tr><td><%=@findmsg.main%></td></tr>
+  <tr><td>回應： <%=form_tag('/msg/sending')%>
+
+    <%=hidden_field_tag('userid', @findmsg.sender.to_s)%>
+      <textarea name="cm_main" id="editA" cols="4" rows="5" style="text-align: left;"></textarea>
+</td></tr>
+      <tr>  <td > <input type="submit" class="ss-button small red ss-no-ajax" name="send" href="javascript:void(0)" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);" value="發出"></td>
+      </tr>
+
+</table>
+    </div>
+    </div>

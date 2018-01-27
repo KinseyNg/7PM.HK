@@ -1,0 +1,32 @@
+<% content_for :title, "填寫你的電話號碼" %>
+在進入舊書交收頁前請填寫你的電話號碼以作交收之用
+<%=form_tag(nil,:id=>"updatetel")%>
+<table>
+  <tr>
+    <td>交收電話</td>
+    <td><%=text_field_tag('tel')%></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>  <a  class="ss-button small red ss-no-ajax " id="submitlink" onclick="return false">更新</a></td>
+  </tr>
+</table>
+<script>
+
+
+    document.getElementById("submitlink").addEventListener("click", function () {
+//    var form = document.getElementById("posttitle");
+        var form = document.getElementById("updatetel");
+//    var hiddenField = document.createElement("input");
+//    hiddenField.setAttribute("type", "hidden");
+//    hiddenField.setAttribute("name", "cm_main");
+//    hiddenField.setAttribute("value", field1);
+//    form.appendChild(hiddenField);
+
+    form.submit();
+
+
+
+    });
+
+</script>

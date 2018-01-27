@@ -1,0 +1,66 @@
+<% content_for :title, "討論區" %>
+          <h1 class="section-title">7pm討論區</h1>
+          <div class="textbanner">
+            <h5>7pm討論區 - 說明</h5>
+            <ul>
+              <li>1. 歡迎任何人士自由發表意見</li>
+              <li>2. 本討論區允許無需登入留言</li>
+              <li>3. 發言不得遺反當地法律</li>
+              <li>4. 7pm.hk保留最終決定權</li>
+            </ul>
+
+          </div>
+
+          <h1 class="section-title">
+            <%=form_tag('/f/search',:id=>"search",:method=>"get")%>
+
+
+
+
+            <div class="row collapse">
+              <div class="large-12 columns">
+                <div class="row collapse">
+                  <div class="small-8 large-10 columns">
+                    <%=text_field_tag('fid',nil, :placeholder => "搜索討論區文章")%>
+                  </div>
+                  <div class="small-4  large-2 columns">
+                    <a href="" class="button postfix" id="searchlink">搜索</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          <h3 class="section-title" style="text-align: center">分類</h3>
+          <div class="section-title-separator"></div>
+          <table class="small-12 medium-12 large-12 small-centered medium-centered large-centered columns">
+            <tr>
+             <td>分區</td>      <td>最後文章</td>
+              <% @showforum.each_with_index do |n,index| %>
+                  <tr>
+                  <td width="30%"> <%=link_to n.category,"/f/showt/"+n.id.to_s,:class=>"ss-no-ajax",:target => '_blank'%></td>
+                    <td><%=
+                        begin
+                        Title.where(:forum_id => n.id.to_i).order("updated_at DESC").first.title_name
+                    rescue
+                        ""
+                        end
+                    %></td>
+                  </tr>
+                  <%end%>
+
+            </tr>
+
+
+          </table>
+<script>
+    var form = document.getElementById("search");
+
+    document.getElementById("searchlink").addEventListener("click", function () {
+
+       // form.appendChild(hiddenField);
+        form.submit();
+
+
+    });
+</script>
+</script>

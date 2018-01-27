@@ -1,0 +1,30 @@
+<% content_for :title, @search+"的搜尋結果" %>
+<h3 class="section-title" style="text-align: center">以下是 : <%=    @search%>的搜尋結果<br>
+請注意，特定版區的文帖不會在本頁顯示
+</h3>
+<div class="section-title-separator"></div>
+<table class="small-12 medium-12 large-12 small-centered medium-centered large-centered columns">
+  <tr>
+    <td width="60%">標題</td>  <td>發布</td> <td>回複</td>   <td>最後日期</td>
+
+  </tr>
+  <% @showtitle.each do|n| %>
+      <tr>
+        <td><%=link_to n.title_name,"/f/showc/"+n.id.to_s,:class => ' ss-no-ajax',:target => '_blank'%></td>
+        <td>
+          <% findUserName=User.find_by_id(n.user_id)%>
+          <%=link_to findUserName.name,"/f/showc/"+n.id.to_s%>
+
+        </td>
+        <td>
+          <%  countCM=Cm.where(title_id: n.id)%>
+          <%=countCM.count%>
+
+        </td>
+        <td>
+          <%=countCM.last.created_at%>
+
+        </td>
+      </tr>
+  <% end %>
+</table>

@@ -1,0 +1,296 @@
+﻿/*---------------------------------------------------------------------------------*/
+/*	Header
+/*---------------------------------------------------------------------------------*/
+
+
+/*----------  Background Color -------------*/
+
+.mobile-header, .main-header {
+    background-color: #563c4b;
+}
+
+/*----------  Main Color  ------------------*/
+
+.mobile-header .logo a, a.ss-mobile-menu-button, header.main-header .social-button, header.main-header .logo a, header.main-header .logo a:hover, .header-social-container, header.main-header a , .main-header , .copyright, .header-widget .widget a {
+    color: #ddd;
+}
+
+
+/*----------  Second Color -----------------*/
+
+.iconbox-container {
+    color: #ddd;
+}
+
+/*----------  Hover Color ------------------*/
+
+a.ss-mobile-menu-button:hover, header.main-header a:hover, .header-widget .widget a:hover, header.main-header .social-button:hover , .main-navigation li.current-menu-item > a, .main-navigation li.current_page_item > a,  .main-navigation li.current-menu-ancestor > a {
+    color: #fff;
+}
+
+
+/*----------  Text Color  ------------------*/
+.header-widget .widget .post-date {
+    color: #bbb;
+}
+
+.main-header .header-widget .widget_title-line, .header-separator  {
+    background-color: #bbb;
+}
+
+
+/*---------------------------------------------------------------------------------*/
+/*	Container
+/*---------------------------------------------------------------------------------*/
+
+/*----------  Background Color -------------*/
+
+body , .main-container, .tab-container .tabs li a, .tab-container .tabs a.current, .social-icon-item.sii-box, .social-icon-item.sii-box {
+    background-color: #eee;
+}
+
+
+/*----------  Main Color  ------------------*/
+
+.blog-single .entry-meta.tags .tag-title , body, .blog-single .blog-single-content, .blog-single .blog-item h1.blog-item-title,   .page-404-content  h1.page-404-header ,  .tab-container .tabs a.current, .tab-container.borderless .tabs a.current, .toggle-item-header.ui-toggle-header-active h3, .accordion-item-header.current h3, .ss-filter-tiles-button.active, .comment-form .comment-text textarea, .comment-form .respond-inputs input, .blog-single .blog-single-desc , .blog-item.blog-qoute .ss-testimonial p , h2.team-member-name {
+    color: #555;
+}
+/*	color !important;*/
+.blog-item h3.blog-item-title a {
+    color: #555 !important;
+}
+
+
+/*----------  Second Color -----------------*/
+
+input[type="submit"], input[type="button"], input[type="reset"] .iconbox-container, a, var, kbd, samp, code, pre, .ss-button.default, .form-submit .submit, .ss-social-container , p.team-member-description, .social-button, .page-404-content .page-404-subheader, .social-icon-item, .tab-container.borderless .tabs li a, .tab-container .tabs li a, .tab-container a, .accordion-container h3, .toggle-container h3 {
+    color: #999999;
+}
+/*	color !important;*/
+.blog-container .blog-item {
+    color: #999999 !important;
+}
+.social-icon-item.sii-box, .rsDefault .rsBullet.rsNavSelected span, .contact-1 .map-canvas-1 {
+    background-color: #999999;
+}
+.social-icon-item.sii-box, .social-icon-item.sii-border,  .tab-container.borderless .tabs li a, .rsDefault .rsBullet span, .form-submit .submit, .ss-button.default , input[type="submit"], input[type="button"], input[type="reset"] , table, tr {
+	border-color: #999999;
+}
+
+
+/*----------  Hover Color ------------------*/
+
+.social-button:hover, .social-icon-item:hover, .tab-container .tabs li a:hover, .tab-container.borderless .tabs li a:hover , .tab-container a:hover, .accordion-container h3:hover, .toggle-container h3:hover, .form-submit .submit:hover,  .comment a:hover ,  .ss-button.default:hover, a:hover, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover {
+    color: #8b4f5f;
+}
+.blog-item h3.blog-item-title a:hover {
+    color: #8b4f5f !important;
+}
+.social-icon-item.sii-box:hover {
+    background-color: #8b4f5f;
+}
+.social-icon-item.sii-box:hover, .social-icon-item.sii-border:hover,  .tab-container.borderless .tabs li a:hover ,  .tab-container.borderless .tabs a.current, .form-submit .submit:hover, .ss-button.default:hover , input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover {
+    border-color: #8b4f5f;
+}
+
+
+/*----------  Text Color  ------------------*/
+
+.portfolio-single-container .entry-meta.category .category-title, .page-404-container, .comment a , .social-icon-item.sii-box {
+    color: #ccc;
+}
+.rsDefault .rsBullet span:hover {
+    background-color: #ccc;
+}
+.blog-separator , .team-member-separator, .section-title-separator  {
+    background-color: #ccc;
+}
+.toggle-item, .accordion-item, .tab-container .tab-pane, .tab-container .tabs a.current, .comments-list li > div , .comments, .blog-container .blog-item .blog-item-content, input, textarea, select , blockquote, abbr[title], acronym[title], dfn[title] {
+    border-color: #ccc;
+}
+.blog-container.boxed-item .blog-item .blog-item-content {
+    border-bottom: none;
+}
+
+/*----------  Other Color  ------------------*/
+
+.team-member-image-container {
+    border-color: #fff;
+}
+.team-member-hover  {
+    background-color: rgba(255, 255, 255, 0.80);
+}
+
+
+/*---------------------------------------------------------------------------------*/
+/*	Sidebar
+/*---------------------------------------------------------------------------------*/
+
+/*----------  Background Color -------------*/
+
+.main-container.has-sidebar .sidebar {
+    background-color: #555;
+}
+
+
+/*----------  Main Color  ------------------*/
+
+.main-container.has-sidebar .sidebar, .widget a {
+    color: #999999;
+}
+
+
+/*----------  Second Color -----------------*/
+
+.search-box .search-box-text, .widget_latest_portfolio .item-buttons a, .widget_latest_portfolio .item-buttons span , .widget .post-date {
+    color: #999;
+}
+input.search-box-text::-webkit-input-placeholder {
+   color: #999;
+}
+input.search-box-text:-moz-placeholder {
+   color: #999;
+}
+input.search-box-text::-moz-placeholder {
+   color: #999;
+}
+input.search-box-text:-ms-input-placeholder {
+   color:#999;
+}
+input.search-box-text::-webkit-input-placeholder {
+   color: #999;
+}
+input.search-box-text:-moz-placeholder {
+   color: #999;
+}
+input.search-box-text::-moz-placeholder {
+   color:#999;
+}
+input.search-box-text:-ms-input-placeholder {
+   color: #999;
+}
+
+
+/*----------  Hover Color ------------------*/
+
+a.sidebar-toggle-button.ss-mobile-menu:hover {
+    color: #fff;
+}
+a.sidebar-toggle-button:hover, .widget_latest_portfolio .item-buttons a:hover, .widget_latest_portfolio .item-buttons a:hover span , .widget a:hover, .search-box .search-box-submit:hover  {
+    color: #fff;
+}
+
+/*----------  Text Color  ------------------*/
+
+.sidebar .widget .post-date, .search-box .search-box-submit {
+    color: #999;
+}
+.widget_title-line {
+    background-color: #999;
+}
+.search-box .search-box-text {
+    border-color: #999999;
+}
+
+
+/*---------------------------------------------------------------------------------*/
+/*	Loader 
+/*---------------------------------------------------------------------------------*/
+.ss-preloader {
+    background-color: #eee;
+}
+.ss-preloader-spin {
+    border-bottom-color: #8b4f5f;
+    border-left-color: #8b4f5f;
+    border-right-color: #fff;
+    border-top-color: #fff;
+}
+
+/*---------------------------------------------------------------------------------*/
+/*	Scrollbar 
+/*---------------------------------------------------------------------------------*/
+
+.main-header-scrollbar .handle, .main-container-scrollbar .handle, {
+    background-color: #fff;
+}
+::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+::-webkit-scrollbar-button {
+    background-color: #fff;
+}
+/*	background-color: rgba(0, 0, 0, 0.2); */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.main-header:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.main-header-scrollbar .handle, .main-container-scrollbar .handle {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+
+/*---------------------------------------------------------------------------------*/
+/*	Tiles Hover Color
+/*---------------------------------------------------------------------------------*/
+
+/*tiles hover not change in this css files*/
+.ss-tile a {
+    color: #999999;
+}
+.ss-tile a:hover {
+    color: #000000;
+}
+
+
+/*---------------------------------------------------------------------------------*/
+/*	Field
+/*---------------------------------------------------------------------------------*/
+
+input, textarea, select {
+    background-color: #fff;
+}
+input, textarea, select {
+    color: #999;
+}
+input::-webkit-input-placeholder {
+   color: #999;
+}
+input:-moz-placeholder {
+   color: #999;
+}
+input::-moz-placeholder {
+   color: #999;
+}
+input:-ms-input-placeholder {
+   color: #999;
+}
+textarea::-webkit-input-placeholder {
+   color: #999;
+}
+textarea:-moz-placeholder {
+   color: #999;
+}
+textarea::-moz-placeholder {
+   color: #999;
+}
+textarea:-ms-input-placeholder {
+   color: #999;
+}
+
+/*---------------------------------------------------------------------------------*/
+/*	Blog Boxed-Item color 
+/*---------------------------------------------------------------------------------*/
+
+.blog-container.boxed-item .blog-item .blog-item-content {
+    background-color: #fff;
+}
+
+/*---------------------------------------------------------------------------------*/
+/*	transparent
+/*---------------------------------------------------------------------------------*/
+.rsDefault .rsBullet span, .form-submit .submit, .blog-item-overlay, .portfolio-item-overlay , .search-box .search-box-submit, input[type="submit"], input[type="button"], input[type="reset"] {
+    background-color: transparent;
+}
+

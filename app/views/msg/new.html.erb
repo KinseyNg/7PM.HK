@@ -1,0 +1,28 @@
+<% content_for :title, "發送新信息" %>
+<h1>發送新信息</h1>
+<div class="sq">
+  <%=form_tag('/msg/sending')%>
+  <table >
+
+  <tr><td width="30%">發送至用戶：</td><td><input type="text" name="username"></td></tr>
+  <tr><td>內容：</td><td>  <textarea name="cm_main" id="editA" cols="50" rows="30" style="text-align: left;"></textarea></td></tr>
+<tr>
+
+  <td colspan="2"> <input type="submit" class="ss-button small red" name="send" href="javascript:void(0)" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);" value="發出"></td>
+</tr>
+</table>
+
+<script>
+
+    $('#editA').editable({
+        imageUpload: false,
+        inlineMode: false,
+        buttons: ['bold', 'italic', 'sep',
+            // 'indent', 'outdent',
+            'insertOrderedList', 'insertUnorderedList', 'sep',
+            'createLink', 'insertImage', 'inlineStyle'],
+        width: '700',
+        height: '200'
+
+    });
+</script></div>

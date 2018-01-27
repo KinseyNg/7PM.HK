@@ -1,0 +1,131 @@
+<% content_for :title, @showtitle.first.title_name %>
+
+<dl class="alert-box radius secondary">Post ：  <%=@showtitle.first.title_name%><br> <%=link_to(' < 返回主頁','/f/showt/'+@showtitle.first.forum_id.to_s)%></dl>
+<p></p>
+<h3 class="section-title" style="text-align: center"></h3>
+<div class="section-title-separator"></div>
+<table class="small-12 medium-12 large-12 small-centered medium-centered large-centered columns">
+  <%@showcm.each_with_index do |n,index| %>
+      <% if index==1%>
+          <tr><td colspan="2"></td></tr>
+      <%end%>
+      <tr>
+        <td width="20%" class="cmprofile">
+<% begin%>
+          <% image=User.where(:id=>n.user_id)%>
+          <%=index+1%>
+          <br>
+
+          <%=begin
+           image_tag(image.pic,:width => 70)
+
+          rescue
+            image_tag("/images/7pm.png",:width => 70)
+             end
+          %>
+
+          <br>
+          發文數目：<%=Cm.where(:user_id => image.first.id).count%>
+          <br>
+
+          <%=image.first.name%>
+<%rescue%>
+<br>
+              訪客
+              <br>
+              <%=n.an_user%>
+              <%end%>
+          <br>發表日期 :
+          <%=n.created_at%>
+
+        </td>  <td class="cmtop">
+        <%=sanitize n.cm_main%><br>
+        <a href="<%=n.photo1.url%>">
+        <%= if n.photo1.file?
+            image_tag(n.photo1.url,:width => 200)
+            end
+        %></a></td>
+
+
+      </tr>
+
+  <% end %>
+</table>
+<table>
+  <tr>
+    <td width="70%"></td>
+    <td>  <%= paginate @showcm %></td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <!--form_tag("/f/showcg/"+@tid.to_s,-->
+    <%=form_tag(nil,:id=>"posttitle", :multipart => true, "data-ajax" => false)%>
+    <td colspan=2>發表回覆</td>
+
+  </tr>
+  <tr>  <td width="30%">
+    <!--標題-->
+  </td>
+    <td  width="70%">
+      <!--<input name="title_name">-->
+    </td>
+  </tr>
+  <tr>  <td>內文</td><td style="text-align: left;">
+    <textarea name="cm_main" id="editA" cols="50" rows="30" style="text-align: left;"></textarea>
+    <!--<div id="edit"  name="cm_main" class="text-small"></div>-->
+
+  </td></tr>
+
+  <tr>
+    <%if session[:siteid].present? %>
+    <td>圖片(如有)：</td><td><%=  file_field_tag :photo1 %>
+  <%end%>
+  </td></tr>
+  <%if session[:siteid].nil? %>
+  <tr><td>你的稱呼：</td><td><%=text_field_tag('an_user')%></td></tr>
+  <%end%>
+
+  <tr>
+  <td></td><td>
+<!--<input type="submit" class="ss-button small red ">-->
+  <a  class="ss-button small red ss-no-ajax " id="submitlink" onclick="return false">發帖</a>
+</td>
+</tr>
+
+  <!--<tr>  <td>送出</td><td></td></tr>-->
+</table>
+<!--<p>ontrary to popular belief,Lorem Ipsum is not simply andom text. It has roots men  book. It has survived not only  Pellentesque habitant morbi tristiqe sene ctus et netus et malesuada fames ac  </p>-->
+<!--<div class="gap" style="height:20px;"></div>-->
+
+
+
+<script>
+
+//    $('#editA').editable({
+//       imageUpload: false,
+//      //  language: 'zh_tw',
+//        inlineMode: false,
+//        buttons: ['bold', 'italic', 'sep',
+//            // 'indent', 'outdent',
+//            'insertOrderedList', 'insertUnorderedList', 'sep',
+//            'createLink', 'insertImage', 'inlineStyle'],
+//        width: '700',
+//        height: '200'
+//
+//    });
+$("#editA").jqte();
+    var form = document.getElementById("posttitle");
+
+    document.getElementById("submitlink").addEventListener("click", function () {
+        var field1 = document.getElementById('editA').value;
+        var hiddenField = document.createElement("input");
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", "cm_main");
+        hiddenField.setAttribute("value", field1);
+       form.appendChild(hiddenField);
+        form.submit();
+
+
+    });
+</script>

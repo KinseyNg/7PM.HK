@@ -1,0 +1,106 @@
+<% content_for :title, "登入" %>
+          <!--<h1 class="section-title">7pm討論區</h1>-->
+
+          在7pm.hk上註冊你的帳戶，享受網站所有功能：
+
+          <!--<div class="section-title-separator" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>-->
+          <!--<h1 class="section-title"><input><a class="ss-button small blue" href="javascript:void(0)" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><span class="button-icon icon-star3" aria-hidden="true"></span>搜索</a>-->
+          <!--<a class="ss-button small red" href="javascript:void(0)" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><span class="button-icon icon-star3" aria-hidden="true"></span>店主發怖</a></h1>-->
+          <%=form_tag("/login")%>
+          <h3 class="section-title" style="text-align: center"></h3>
+          <div class="section-title-separator"></div>
+          <table class="small-12 medium-12 large-12 small-centered medium-centered large-centered columns">
+         <tr>
+
+
+           <td colspan="2"><h6>登入帳戶</h6></td>
+         </tr>
+            <tr>
+          <td width="30%" >電郵：</td>
+              <td><input name="email" type="text"></td>
+            </tr>
+
+                <tr>
+               <td>密碼：</td>
+                  <td><input type="password" name="password"></td>
+
+                               </tr>
+            <tr><td colspan="2">
+              <input type="submit" value="登入" class="ss-button small blue" href="javascript:void(0)" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+
+
+              <input type="submit" value="忘記密碼" class="ss-button small red" href="javascript:void(0)" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+
+            </td></tr>
+
+          </table>
+            </form>
+          <%=form_tag('/reg')%>
+          <table class="small-12 medium-12 large-12 small-centered medium-centered large-centered columns">
+            <tr>
+
+              <td colspan="2"><h6>註冊新帳戶</h6></td>
+            </tr>
+            <tr>
+              <td width="30%">註冊電郵：</td>
+              <td><input type="email" name="email"></td>
+            </tr>
+            <tr>
+              <td>顯示名稱：</td>
+              <td><input type="text" name="displayname"></td>
+
+            </tr>
+            <tr>
+              <td>密碼：</td>
+              <td><input type="password" name="password"></td>
+
+            </tr>
+
+            <tr>
+              <td>確定密碼：</td>
+              <td><input type="password" name="password2"></td>
+
+            </tr>
+
+            <!--<tr>-->
+              <!--<td>性別<br>(決定能否進入特定專區，-->
+                <!--<br>不能更改)：</td>-->
+              <!--<td>-->
+
+                <!--<select name="cars">-->
+                  <!--<option value="m">男</option>-->
+                  <!--<option value="f">女</option>-->
+
+                <!--</select>-->
+
+              <!--</td>-->
+
+            <!--</tr>-->
+            <!--<tr>-->
+              <!--<td>電話：</td>-->
+              <!--<td><input type="text" name="tel"></td>-->
+
+            <!--</tr>-->
+            <tr><td colspan="2">
+
+              <input type="submit" value="註冊" class="ss-button small blue" href="javascript:void(0)" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+
+            </td></tr>
+
+          </table>
+          </form>
+
+
+<script>
+
+    $('#editA').editable({
+        inlineMode: false,
+        buttons: ['bold', 'italic', 'sep',
+            // 'indent', 'outdent',
+            'insertOrderedList', 'insertUnorderedList', 'sep',
+            'createLink', 'insertImage', 'inlineStyle'],
+        width: '700',
+        height: '200'
+
+    });
+</script>

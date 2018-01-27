@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  seller: 1
+  buyer: 1
+  main: MyString
+  title: MyString
+  pic1: MyString
+  pic2: MyString
+  pic3: MyString
+  subject: 1
+  from: 1
+  location: MyString
+  view: 1
+  ask: 1
+  status: 1
+  price: 9.99
+
+two:
+  seller: 1
+  buyer: 1
+  main: MyString
+  title: MyString
+  pic1: MyString
+  pic2: MyString
+  pic3: MyString
+  subject: 1
+  from: 1
+  location: MyString
+  view: 1
+  ask: 1
+  status: 1
+  price: 9.99

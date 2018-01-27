@@ -1,0 +1,65 @@
+<% content_for :title, "二手書店" %>
+
+<div class="wrapper">
+<h1>二手書店</h1>
+<br>
+
+  <div class="textbanner">
+    <h5>舊書買賣 - 說明</h5>
+    <ul>
+      <li>1. 歡迎同學可以將自己的課本於此平台放售</li>
+      <li>2. 如未能尋得合適課本，可使用"徵求課本"功能</li>
+      <li>3. 本平台只限同學間交易。嚴禁收賣公司與Agent利用本平台"搵客"，一經發現即時刪除</li>
+    </ul>
+
+  </div>
+
+  <h1 class="section-title">
+    <%=form_tag('/oldbook/s/',:id=>"search", method: "get")%>
+
+
+
+
+    <div class="row collapse">
+      <div class="large-12 columns">
+        <div class="row collapse">
+          <div class="small-8 large-10 columns">
+            <%=text_field_tag('fid',nil, :placeholder => "在此輸入你想搜索的書本")%>
+          </div>
+          <div class="small-4  large-2 columns">
+<a href="" class="button postfix" id="searchlink">搜索</a>
+         </div>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="gap" style="height:10px;"></div>
+    <div class="section-title-separator" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+ <div>
+   <table>
+     <tr><td>  <h7 class="section-title" style="text-align: center">按年級</h7></td>
+
+         <!--<td> <h7 class="section-title" style="text-align: center">按科目</h7></td></tr>-->
+
+</tr>
+  </td>
+     <td>
+       <%@from.each do |n|%>
+           <p>
+     <%=link_to(n.form_name,"/oldbook/f/"+n.id.to_s,:class=>"ss-no-ajax") %>
+
+       <%end%>
+     </td>
+     <!--<td></td>-->
+     </tr>
+   </table>
+ </div>
+    </div>
+<script>
+    var form = document.getElementById("search");
+
+    document.getElementById("searchlink").addEventListener("click", function () {
+        form.submit();
+    });
+</script>

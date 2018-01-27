@@ -1,0 +1,32 @@
+<% content_for :title, "輸入你的性別" %>
+在進入特定專區前請輸入你的性別，請注意各性別只能進入其中一個專區，並且不能更改
+<%=form_tag(nil,:id=>"updatetel")%>
+<table>
+  <tr>
+    <td>你是...</td>
+    <td><%=radio_button_tag 'gender', 'm'%>男性<%=radio_button_tag 'gender', 'f'%>女性</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>  <a  class="ss-button small red ss-no-ajax " id="submitlink" onclick="return false">更新</a></td>
+  </tr>
+</table>
+<script>
+
+
+    document.getElementById("submitlink").addEventListener("click", function () {
+//    var form = document.getElementById("posttitle");
+        var form = document.getElementById("updatetel");
+//    var hiddenField = document.createElement("input");
+//    hiddenField.setAttribute("type", "hidden");
+//    hiddenField.setAttribute("name", "cm_main");
+//    hiddenField.setAttribute("value", field1);
+//    form.appendChild(hiddenField);
+
+        form.submit();
+
+
+
+    });
+
+</script>

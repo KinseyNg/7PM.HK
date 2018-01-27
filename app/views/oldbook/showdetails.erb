@@ -1,0 +1,55 @@
+<% content_for :title, @bookinfo.title %>
+<dl class="alert-box radius secondary">書名 ：  <%=@bookinfo.title%><br> <%=link_to(' < 返回主頁','/oldbook/index')%></dl>
+<p></p>
+<table>
+
+  <tr>
+    <td><a href="<%=@bookinfo.photo1.url %>"> <%= image_tag @bookinfo.photo1.url %></a></td>
+    <%if @bookinfo.photo2.present?%>
+        <td> <a href="<%=@bookinfo.photo2.url %>"><%= image_tag @bookinfo.photo2.url %></td></a>
+    <%end%>
+
+
+    <%if @bookinfo.photo3.present?%>
+        <td>   <a href="<%=@bookinfo.photo3.url %>"/> <%= image_tag @bookinfo.photo3.url %></a></td>
+    <%end%>
+  </tr>
+</table>
+<div class="row">
+  <div class="large-6 columns">
+<table >
+
+
+  <tr>   <td>
+    <%if @bookinfo.sold=="unsold"%>
+    賣家：
+
+        <% else%>
+    請求者：
+        <%end%>
+
+    <%=@seller%></td></tr>
+ <tr>   <td>新舊程度：   <%=@bookinfo.status.present? ? (@bookinfo.status.to_s+"%") : ("請聯絡賣家")%></td></tr>
+  <tr>    <td>出版年份：   <%=@bookinfo.public_year.present? ? (@bookinfo.public_year) : ("請聯絡賣家")%></td></tr>
+  <tr>     <td>價錢：   <%=@bookinfo.price.present? ? ("HKD$"+@bookinfo.price.to_s) : ("請聯絡賣家")%></td></tr>
+  <tr>     <td>其他：   <%=@bookinfo.main.present? ? (sanitize(@bookinfo.main)) : ("請聯絡賣家")%></td>  </tr>
+
+</table>
+  </div>
+<div  class="large-6 columns">
+  <%if @sellerid.first.id==session[:siteid]%>
+<a href="/oldbook/finish/<%=@bookinfo.id.to_s %>" class="ss-button small green with-icon">完成交易</a><br><br>
+      <%if @bookinfo.sold=="unsold"%>
+
+      <a href="/oldbook/editbook/<%=@bookinfo.id.to_s %>" class="ss-button small red with-icon">修改</a>
+          <%end%>
+<%elsif session[:siteid].nil?%>
+      <a href="">登入系統以聯絡賣家</a>
+  <%else%>
+      發短信向<%=@seller%>查詢：
+      <%=form_tag() %>
+      <%=hidden_field_tag('sellerid', @sellerid.first.id.to_s)%>
+      <%=text_area_tag('main',"本人對你的書本["+@bookinfo.title+"]有興趣 請致電 :"+ @tel +"與本人聯絡", size: "20x7")%>
+      <%=submit_tag('發出') %></div>
+      </div>
+<%end%>

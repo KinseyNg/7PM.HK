@@ -1,0 +1,24 @@
+<% content_for :title, "信息" %>
+<!--<div id="content">-->
+  <!-- Icons source http://dribbble.com/shots/913555-Flat-Web-Elements -->
+<% if flash[:msgtype]=="s" %>
+  <div class="notify successbox">
+    <h1>完成！</h1>
+    <span class="alerticon"><img src="images/check.png" alt="checkmark" /></span>
+    <h5><%=flash[:title]%></h5>
+    <p><%=flash[:main]%></p>
+  </div>
+<%elsif flash[:msgtype]=="e" %>
+  <div class="notify errorbox">
+    <h1>發生錯誤!</h1>
+    <span class="alerticon"><img src="images/error.png" alt="error" /></span>
+    <h5><%=flash[:title]%></h5>
+    <p><%=flash[:main]%></p>
+    <p><a href="<%=flash[:url]%>"><%=flash[:urltext]%></a> </p>
+  </div>
+<%else%>
+<script>
+    document.location.href="/";
+</script>
+
+<%end%>

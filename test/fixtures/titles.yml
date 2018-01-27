@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title_name: MyString
+  forum_id: 1
+  user_id: 1
+  cm_count: 1
+  create_ip: MyString
+  mode: 1
+  color: MyString
+
+two:
+  title_name: MyString
+  forum_id: 1
+  user_id: 1
+  cm_count: 1
+  create_ip: MyString
+  mode: 1
+  color: MyString

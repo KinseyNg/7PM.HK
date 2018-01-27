@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title_id: 1
+  user_id: 1
+  cm_main: MyString
+  ip: MyString
+  mode: 1
+
+two:
+  title_id: 1
+  user_id: 1
+  cm_main: MyString
+  ip: MyString
+  mode: 1

@@ -1,0 +1,9 @@
+<% content_for :title, "修改密碼" %>
+修改密碼：
+<%=form_tag()%>
+<table>
+  <tr><td>原有密碼</td><td><input type="password" name="pass"></td></tr>
+ <tr> <td>新密碼：</td><td><input type="password" name="newpass1"></td></tr>
+<tr>    <td>再次輸入：</td><td><input type="password" name="newpass2"></td></tr>
+<tr><td></td><td><%=submit_tag('更改')%></td></tr>
+</table>
